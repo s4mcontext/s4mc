@@ -24,8 +24,8 @@ Results for PASCAL VOC 12, using additional coarse annotated:
 |:--- |:---:|:---:|:---:|:---:|:---:|
 |Sup only|45.77 |54.92 |65.88 |71.69| 72.50|
 |baseline |52.16| 63.47| 69.46| 73.73| 76.54|
-|S4MC   |**74.32**| **75.62**| **77.84**| **79.72**| **81.51**|
-
+|S4MC     |70.96| 71.6*| 75.41| 77.73| 80.58|
+|S4MC  + FixMatch   |**74.32**| **75.62**| **77.84**| **79.72**| **81.51**|
 
 For all the results, please refer to the paper experiment section
 
