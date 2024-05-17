@@ -285,7 +285,7 @@ def train(
     learning_rates = AverageMeter(10)
 
     batch_end = time.time()
-    for step in range(1):  # len(loader_l)):
+    for step in range(len(loader_l)):
         batch_start = time.time()
 
         i_iter = epoch * len(loader_l) + step
