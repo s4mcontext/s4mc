@@ -59,7 +59,6 @@ class LRScheduler(object):
         self.cur_lr = [lr for lr in self.base_lr]
 
         # poly kwargs
-        # TODO
         if mode == "poly":
             self.power = lr_args["power"] if lr_args.get("power", False) else 0.9
         if mode == "milestones":
