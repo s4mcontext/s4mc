@@ -45,6 +45,12 @@ def setup_distributed(backend="nccl", port=None):
     return rank, world_size
 
 
+def do_all_gather(tensor, size):
+    tensor_out_list = [torch.empty_like(tensor) for _ in range(size)]
+    dist.all_gather(tensor_out_list, tensor)
+    out_tensor = torch.cat(tensor_out_list)
+    return out_tensor
+
 def gather_together(data):
     world_size = dist.get_world_size()
     gather_data = [torch.zeros_like(data).cuda() for _ in range(world_size)]
