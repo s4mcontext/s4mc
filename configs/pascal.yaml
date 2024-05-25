@@ -1,0 +1,22 @@
+# arguments for dataset
+dataset: pascal
+nclass: 21
+crop_size: 512 #512
+data_root: ../semi-supervised-segmentation/data/VOC2012/
+
+# arguments for training
+epochs: 90 # only for graphs
+batch_size: 1 # was 1
+lr: 0.001  # 4GPUs
+lr_multi: 10.0
+criterion:
+  name: CELoss
+  kwargs:
+    ignore_index: 255
+conf_thresh: 0.95
+
+# arguments for model
+backbone: resnet101
+multi_grid: False
+replace_stride_with_dilation: [False, False, True]
+dilations: [6, 12, 18]
